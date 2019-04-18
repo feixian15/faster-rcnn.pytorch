@@ -40,6 +40,7 @@ class _AnchorTargetLayer(nn.Module):
         self._scales = scales
         anchor_scales = scales
         self._anchors = torch.from_numpy(generate_anchors(scales=np.array(anchor_scales), ratios=np.array(ratios))).float()
+        
         self._num_anchors = self._anchors.size(0)
 
         # allow boxes to sit over the edge by a small amount
